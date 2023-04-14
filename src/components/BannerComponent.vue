@@ -1,10 +1,12 @@
 <template>
     <div id="banner">
         <div class="container h-100">
-            <ul v-for="(item, index) in items" :key="index" class="list-unstyled d-flex">
+            <ul v-for="(item, index) in items" :key="index" class="list-unstyled d-flex debug">
                 <li>
-                    <a href="#" class="d-flex justify-content-center align-items-center">
-                        <img :src="'img/' + item.image" alt="">
+                    <a href="#" class="d-flex justify-content-center align-items-center debug">
+                        <div class="box-logo debug">
+                            <img :src="'img/' + item.image" alt="logo" class="">
+                        </div>
                         <span>{{ item.title }}</span>
                     </a>
                 </li>
@@ -30,7 +32,7 @@ import {bannerPromo} from '../data/data.js'
 
 #banner{
     background-color: #0281f9;
-    height: 200px;
+    height: 180px;
 
     .container{
         display: flex;
@@ -49,8 +51,14 @@ import {bannerPromo} from '../data/data.js'
         font-weight: 400;
         font-size: 0.9rem;
 
+        .box-logo{
+            width: 100px;
+            height:60px;
+        }
         img{
-            width: 25%;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
     }
 }
