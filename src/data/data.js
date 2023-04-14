@@ -191,4 +191,28 @@ const footerLinks = [
     },
 ]
 
-export {navLinks, bannerPromo, footerLinks}
+const socialLinks = [
+    {
+        title: 'facebook',
+        image: 'footer-facebook.png'
+    },
+    {
+        title: 'twitter',
+        image: 'footer-twitter.png'
+    },
+    {
+        title: 'youtube',
+        image: 'footer-youtube.png'
+    },
+    {
+        title: 'pinterest',
+        image: 'footer-pinterest.png'
+    },
+    {
+        title: 'periscope',
+        image: 'footer-periscope.png'
+    },
+
+]
+
+export {navLinks, bannerPromo, footerLinks, socialLinks}
