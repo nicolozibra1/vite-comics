@@ -4,9 +4,9 @@
             <img src="../assets/img/dc-logo.png" alt="dc logo">
         </div>
 
-        <ul v-for="(link, index) in links" :key="index" class="list-unstyled d-flex">
+        <ul v-for="link in links" :key="link.id" :id="link.id" class="list-unstyled d-flex">
             <li class="px-3">
-                <a href="#">{{ link.title }}</a>
+                <a href="#" @click="setActive(link.id)" :class="{ 'active': link.active }">{{ link.title }}</a>
             </li>
         </ul>
     </header>
@@ -18,7 +18,16 @@ import {navLinks} from '../data/data.js'
         name: 'HeaderComponent',
         data() {
             return {
-                links: navLinks
+                links: navLinks,
+            }
+        },
+        methods: {
+            setActive(id) {
+                this.link = this.links.find(link => link.id === id);
+                this.links.forEach(link => {
+                    link.active = link.id === id; // Imposta mouseOver su true solo per la card corrente, altrimenti su false per le altre card
+                });
+                console.log(this.link.id, this.link.active)
             }
         }
     }
@@ -29,7 +38,7 @@ header{
     height: 120px;
 }
 
-ul{
+ul{ 
     li a{
         text-decoration: none;
         color: black;
@@ -37,6 +46,14 @@ ul{
         font-family: 'Roboto','sans-serif';
         font-weight: 600;
         font-size: 0.9rem;
+        cursor: pointer;
+
+        &:hover {
+            border-bottom: 3px solid #0281f9;
+        }
+        &.active{
+            border-bottom: 3px solid #0281f9;
+        }
     }
 }
 </style>
