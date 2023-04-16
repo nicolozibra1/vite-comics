@@ -70,7 +70,7 @@ const bannerPromo = [
     },
     {
         title: 'dc power visa',
-        image: 'buy-dc-power-visa.svg'
+        image: 'buy-dc-power-visa.png'
     }
 ]
 
