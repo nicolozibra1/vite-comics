@@ -1,7 +1,9 @@
 <template>
     <header class="container d-flex justify-content-between align-items-center p-3">
-        <div class="box-logo w-50">
-            <img src="../assets/img/dc-logo.png" alt="dc logo">
+        <div class="container-logo w-50 debug">
+            <div class="box-logo debug">
+                <img src="../assets/img/dc-logo.png" alt="dc logo" class="debug">
+            </div>
         </div>
         <a href="#" class="hamburger fs-4" @click="openMenu" v-if="!open"><i class="fa-solid fa-bars"></i></a>
         <a href="#" class="cross fs-2" @click="closeMenu" v-if="close"><i class="fa-solid fa-xmark"></i></a>
@@ -12,8 +14,8 @@
         </ul>
     </header>
     <div class="v-menu" v-if="open">
-        <ul v-for="link in links" :key="link.id" :id="link.id" class="list-unstyled">
-            <li class="px-3">
+        <ul v-for="link in links" :key="link.id" :id="link.id" class="list-unstyled mb-2">
+            <li>
                 <a href="#" @click="setActive(link.id)" :class="{ 'active': link.active }">{{ link.title }}</a>
             </li>
         </ul>
@@ -35,7 +37,7 @@ import {navLinks} from '../data/data.js'
             setActive(id) {
                 this.link = this.links.find(link => link.id === id);
                 this.links.forEach(link => {
-                    link.active = link.id === id; // Imposta mouseOver su true solo per la card corrente, altrimenti su false per le altre card
+                    link.active = link.id === id; // Imposta active su true solo per la selezione corrente, altrimenti su false per tutte le altre voci
                 });
                 console.log(this.link.id, this.link.active)
             },
@@ -55,7 +57,15 @@ import {navLinks} from '../data/data.js'
 header{
     height: 120px;
 }
+.box-logo{
+    height: 80px;
+    width: 80px;
 
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
 ul{ 
     display: flex;
 
@@ -76,16 +86,31 @@ ul{
         }
     }
 }
-
+// .debug{
+//     border: 1px solid red;
+// }
 @media screen and (max-width: 992px) {
+    header{
+        height: 100px;
+    }
     .navbar{
         display: none;
     }
     .v-menu{
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        height: 400px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background-color: white;
+    }
+    .box-logo{
+        width: 75px;
+        height: 75px;
     }
 }
 @media screen and (min-width: 992px) {
