@@ -3,13 +3,21 @@
         <div class="box-logo w-50">
             <img src="../assets/img/dc-logo.png" alt="dc logo">
         </div>
-
-        <ul v-for="link in links" :key="link.id" :id="link.id" class="list-unstyled d-flex">
+        <a href="#" class="hamburger fs-4" @click="openMenu" v-if="!open"><i class="fa-solid fa-bars"></i></a>
+        <a href="#" class="cross fs-2" @click="closeMenu" v-if="close"><i class="fa-solid fa-xmark"></i></a>
+        <ul v-for="link in links" :key="link.id" :id="link.id" class="navbar list-unstyled">
             <li class="px-3">
                 <a href="#" @click="setActive(link.id)" :class="{ 'active': link.active }">{{ link.title }}</a>
             </li>
         </ul>
     </header>
+    <div class="v-menu" v-if="open">
+        <ul v-for="link in links" :key="link.id" :id="link.id" class="list-unstyled">
+            <li class="px-3">
+                <a href="#" @click="setActive(link.id)" :class="{ 'active': link.active }">{{ link.title }}</a>
+            </li>
+        </ul>
+    </div>
 </template>
 
 <script>
@@ -19,6 +27,8 @@ import {navLinks} from '../data/data.js'
         data() {
             return {
                 links: navLinks,
+                open: false,
+                close: false
             }
         },
         methods: {
@@ -28,6 +38,14 @@ import {navLinks} from '../data/data.js'
                     link.active = link.id === id; // Imposta mouseOver su true solo per la card corrente, altrimenti su false per le altre card
                 });
                 console.log(this.link.id, this.link.active)
+            },
+            openMenu() {
+                this.open = true;
+                this.close = true;
+            },
+            closeMenu() {
+                this.close = false;
+                this.open = false;
             }
         }
     }
@@ -39,6 +57,8 @@ header{
 }
 
 ul{ 
+    display: flex;
+
     li a{
         text-decoration: none;
         color: black;
@@ -54,6 +74,26 @@ ul{
         &.active{
             border-bottom: 3px solid #0281f9;
         }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .navbar{
+        display: none;
+    }
+    .v-menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (min-width: 992px) {
+    .hamburger{
+        display: none;
+    }
+    .v-menu{
+        display: none;
     }
 }
 </style>

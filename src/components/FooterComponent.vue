@@ -60,11 +60,12 @@ import { socialLinks } from '../data/data.js'
 <style lang="scss" scoped>
 
     footer{
-        height: calc(100vh - 450px);
+        height: 580px;
 
         .f-top{
             background-image: url(../assets/img/footer-bg.jpg);
             overflow: hidden;
+            height: 460px;
 
             #col-links{
                 display: flex;
@@ -141,6 +142,16 @@ import { socialLinks } from '../data/data.js'
                 &:hover{
                     opacity: 1;
                 }
+            }
+        }
+    }
+    @media screen and (max-width: 992px) {
+        .f-top{
+            #col-links{
+                width: 100%;
+            }
+            #col-logo{
+                display: none;
             }
         }
     }

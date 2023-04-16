@@ -15,5 +15,10 @@
         width: 100%;
         height: 400px;
         overflow: hidden;
+
+        img{
+            width: 100%;
+            min-height: 400px;
+        }
     }
 </style>
