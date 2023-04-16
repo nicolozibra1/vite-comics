@@ -124,12 +124,23 @@ import { socialLinks } from '../data/data.js'
                 border: 2px solid #0281f9;
                 padding: 12px;
                 background-color: transparent;
+
+                &:hover{
+                    background-color: #0281f9;
+                }
             }
             span{
                 color: #0281f9;
                 text-transform: uppercase;
                 font-weight: bold;
                 font-size: 1.2rem;
+            }
+            img{
+                opacity: 0.25;
+
+                &:hover{
+                    opacity: 1;
+                }
             }
         }
     }
