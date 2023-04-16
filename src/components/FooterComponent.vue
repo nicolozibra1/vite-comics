@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-6 debug py-5" id="col-links">
                         <ul v-for="(link, index) in links" :key="index" class="list-unstyled d-flex flex-column flex-wrap">
-                            <li class="text-white text-uppercase fw-bold fs-5 mb-2">
+                            <li class="text-uppercase fw-bold fs-5 mb-2" id="link-title">
                                 {{ link.title }}
                             </li>
                             <li v-for="(item, i) in link.links" :key="i">
@@ -72,12 +72,27 @@ import { socialLinks } from '../data/data.js'
                 flex-wrap: wrap;
                 max-height: 440px;
 
+                ul{
+                    #link-title{
+                        color: white;
+                    }
+                    &:hover{
+                        #link-title{
+                            color: #0281f9;
+                        }
+                    }
+                }
+
                 a{
                 color: grey;
                 text-decoration: none;
                 text-transform: capitalize;
                 font-weight: lighter;
                 font-size: 0.9rem;
+
+                    &:hover{
+                        color: white;
+                    }
                 }
             }
             
