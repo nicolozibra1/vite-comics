@@ -216,73 +216,97 @@ const socialLinks = [
 ]
 
 const comics = [
-    {
+    {   
+        id:1,
+        mouseOver: false,
         "thumb": "https://www.coverbrowser.com/image/action-comics/1-1.jpg",
         "price": "$19.99",
         "series": "Action Comics",
         "type": "comic book"
       },
-      {
+      { 
+        id:2,
+        mouseOver: false,
         "thumb": "https://www.panini.it/media/catalog/product/cache/a5b5dd3adfe0d321084804c738f29601/M/1/M1BLLA015ISBN_0.jpg",
         "price": "$3.99",
         "series": "American Vampire 1976",
         "type": "comic book"
       },
-      {
+      { 
+        id:3,
+        mouseOver: false,
         "thumb": "https://static.dc.com/dc/files/default_images/AQM_25_300-001_HD_5b7ef64da4d3e2.77574773.jpg?w=640",
         "price": "$16.99",
         "series": "Aquaman",
         "type": "graphic novel"
       },
       {
+        id:4,
+        mouseOver: false,
         "thumb": "https://d29xot63vimef3.cloudfront.net/image/batgirl/1-1.jpg",
         "price": "$2.99",
         "series": "Batgirl",
         "type": "comic book"
       },
       {
+        id:5,
+        mouseOver: false,
         "thumb": "https://static.posters.cz/image/750/locandine-film-in-plexiglass-batman-prowl-comic-cover-i69653.jpg",
         "price": "$3.99",
         "series": "Batman",
         "type": "comic book"
       },
       {
+        id:6,
+        mouseOver: false,
         "thumb": "https://static.dc.com/dc/files/default_images/bmbeyond_v6_1_5b23ea6ce0a252.68351287.jpg?w=640",
         "price": "$2.99",
         "series": "Batman Beyond",
         "type": "comic book"
       },
       {
+        id:7,
+        mouseOver: false,
         "thumb": "https://static.dc.com/dc/files/default_images/BMSM_18_CV_60a2c085709e56.54915318.jpg?w=640",
         "price": "$3.99",
         "series": "Batman/Superman",
         "type": "comic book"
       },
       {
+        id:8,
+        mouseOver: false,
         "thumb": "https://static.dc.com/dc/files/default_images/BMSMANN_01_300-001_HD_5f5ff17fa1d665.74704970.jpg?w=640",
         "price": "$4.99",
         "series": "Batman/Superman Annual",
         "type": "comic book"
       },
       {
+        id:9,
+        mouseOver: false,
         "thumb": "https://static.dc.com/dc/files/default_images/BMTJWZ_01_300-001_HD_5f5ff2307dcb37.34652945.jpg?w=640",
         "price": "$5.99",
         "series": "Batman: The Joker War Zone",
         "type": "comic book"
       },
       {
+        id:10,
+        mouseOver: false,
         "thumb": "https://static.dc.com/dc/files/default_images/BTJ__5fa0aec041ddb7.35141764.jpg?w=640",
         "price": "$6.99",
         "series": "Batman: Three Jokers",
         "type": "comic book"
       },
       {
+        id:11,
+        mouseOver: false,
         "thumb": "https://static.dc.com/dc/files/default_images/BMWK_HQ_04_300-001_HD_5ffe30903eacd8.81559407.jpg?w=640",
         "price": "$4.99",
         "series": "Batman: White Knight Presents: Harley Quinn",
         "type": "comic book"
       },
       {
+        id:12,
+        mouseOver: false,
         "thumb": "https://static.dc.com/dc/files/default_images/catwoman_v4_17_5b1704e7db3a62.24664710.jpg?w=640",
         "price": "$16.99",
         "series": "Catwoman",
