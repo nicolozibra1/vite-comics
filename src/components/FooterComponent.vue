@@ -60,7 +60,7 @@ import { socialLinks } from '../data/data.js'
 <style lang="scss" scoped>
 
     footer{
-        height: 580px;
+        height: 500px;
 
         .f-top{
             background-image: url(../assets/img/footer-bg.jpg);
